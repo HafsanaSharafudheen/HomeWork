@@ -151,10 +151,8 @@
 
 
 
-import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown, Offcanvas, Form, Button } from "react-bootstrap";
-import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from "mdb-react-ui-kit";
 import "../App.css"
 
 const Header: React.FC = () => {
@@ -220,17 +218,24 @@ const Header: React.FC = () => {
                                 </Nav>
 
                                 {/* Search Bar */}
-                                <Form className="d-flex mt-3 mt-lg-0">
-                                    <Form.Control
-                                        type="search"
-                                        placeholder="Search"
-                                        className="me-2 DefaultInput"
-                                        aria-label="Search"
-                                    />
-                                    <Button className="DefaultButton" type="submit">
-                                        <span className="DefaultFontColor">Search</span>
-                                    </Button>
-                                </Form>
+                                <Form className="d-flex mt-3 mt-lg-0 search-container">
+  <div className="form-floating">
+    <Form.Control
+      type="search"
+      placeholder="Search"
+      className="me-2 DefaultInput no-focus"
+      id="floatingInput"
+      aria-label="Search"
+    />
+    <label htmlFor="floatingInput">Search</label>
+  </div>
+  <Button className="DefaultButton" type="submit">
+    <span className="DefaultFontColor">
+      <i className="fas fa-search"></i>
+    </span>
+  </Button>
+</Form>
+
                             </Offcanvas.Body>
                         </Navbar.Offcanvas>
                     </Container>
